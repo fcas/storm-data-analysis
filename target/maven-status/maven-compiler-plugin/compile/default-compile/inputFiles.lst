@@ -1,0 +1,14 @@
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/model/KeyWords.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/TokenizerBolt.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/dao/TweetsDAO.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/TweetCleanerBolt.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/StormTopology.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/model/TweetStream.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/TaggerBolt.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/helpers/TemporaryFilesMaker.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/helpers/TwitterKeysReader.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/SentimentAnalyserBolt.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/PersistingBolt.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/TwitterStreamSpout.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/storm/SymbolsCleanerBolt.java
+/Users/Felipe/tcc/storm-data-analysis/src/main/java/ufrn/imd/engsoft/model/Sentiment.java
