@@ -7,8 +7,8 @@
     <groupId>ufrn.imd.engsoft</groupId>
     <artifactId>storm-data-analysis</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Simple sentiment analyser based on tweets</name>
-    <description>Storm topology to simple sentiment analysis based on tweets</description>
+    <name>Simple tweet sentiment analyser</name>
+    <description>Storm topology to simple tweet sentiment analysis</description>
 
     <properties>
         <java.version>1.8</java.version>
