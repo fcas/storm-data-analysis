@@ -118,11 +118,11 @@ public class SentimentAnalyserBolt extends BaseRichBolt
 
         double sentimentsScore = countSentimentsScore(positiveSentimentsCounter, negativeSentimentsCounter);
 
-        if (sentimentsScore > 0.5)
+        if (sentimentsScore > 0 && ((1 - sentimentsScore) > 0.5) || sentimentsScore == 1)
         {
             tweetStream.setSentiment(Sentiments.positive.name());
         }
-        else if (sentimentsScore != 0.0 && sentimentsScore < 0.5)
+        else if (sentimentsScore < 0)
         {
             tweetStream.setSentiment(Sentiments.negative.name());
         }

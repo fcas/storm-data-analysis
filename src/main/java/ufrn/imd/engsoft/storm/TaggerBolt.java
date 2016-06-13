@@ -49,12 +49,12 @@ public class TaggerBolt extends BaseRichBolt
         String[] tagsArray = _tagger.tag(tokensArray);
         List<String> tagsList = new ArrayList<>(Arrays.asList(tagsArray));
         POSSample sample = new POSSample(tokensList, tagsList);
-        ConcurrentHashMap<String, String> _map = new ConcurrentHashMap<>();
+        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
         for (int i = 0; i < sample.getSentence().length; i++)
         {
-            _map.put(sample.getSentence()[i], sample.getTags()[i]);
+            map.put(sample.getSentence()[i], sample.getTags()[i]);
         }
-        tweetStream.setTagsMap(_map);
+        tweetStream.setTagsMap(map);
         _outputCollector.emit(new Values(tweetStream));
     }
 

@@ -7,6 +7,7 @@ import org.apache.storm.topology.base.BaseRichBolt;
 import org.apache.storm.tuple.Tuple;
 import org.bson.Document;
 import twitter4j.UserMentionEntity;
+import ufrn.imd.engsoft.dao.ITweetsDAO;
 import ufrn.imd.engsoft.dao.TweetsDAO;
 import ufrn.imd.engsoft.model.TweetStream;
 
@@ -20,13 +21,13 @@ import java.util.Map;
 
 public class PersistingBolt extends BaseRichBolt {
 
-    private TweetsDAO _tweetsDAO;
+    private ITweetsDAO _tweetsDAO;
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector)
     {
-        String _collectionName = "twitter_stream";
-        _tweetsDAO = TweetsDAO.getInstance(_collectionName, false);
+        String collectionName = "storm_twitter_stream";
+        _tweetsDAO = TweetsDAO.getInstance(collectionName, false);
     }
 
     @Override
@@ -43,6 +44,9 @@ public class PersistingBolt extends BaseRichBolt {
         {
             _usersMention.add(userMention.getScreenName());
         }
+
+        document.put("_tweetText", tweetStream.getTweetText());
+        document.put("_tags", tweetStream.getTagsMap());
 
         document.put("_userMentions", _usersMention);
         _tweetsDAO.saveTweetStreams(document);

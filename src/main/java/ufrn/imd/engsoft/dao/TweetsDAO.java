@@ -4,13 +4,14 @@ import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import org.bson.Document;
 import org.jongo.Jongo;
+import org.jongo.marshall.MarshallingException;
 
 /**
  * Created by Felipe on 10/16/15.
  */
-public class TweetsDAO
+public class TweetsDAO implements ITweetsDAO
 {
-    private static TweetsDAO _instance;
+    private static ITweetsDAO _instance;
     private static boolean _dropCollection;
     private static String _collectionName;
     private DB _database;
@@ -38,7 +39,7 @@ public class TweetsDAO
         }
     }
 
-    public static TweetsDAO getInstance(String collectionName, boolean dropCollection)
+    public static ITweetsDAO getInstance(String collectionName, boolean dropCollection)
     {
         if(_instance == null)
         {
@@ -50,7 +51,14 @@ public class TweetsDAO
 
     public void saveTweetStreams(Document tweetStream)
     {
-        _jongo.getCollection(_collectionName).insert(tweetStream);
+        try
+        {
+            _jongo.getCollection(_collectionName).insert(tweetStream);
+        }
+        catch (MarshallingException e)
+        {
+
+        }
     }
 
     public void dropCollection()
